@@ -1,0 +1,194 @@
+<?xml version="1.0" ?>
+<robot name="libot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find libot_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find libot_description)/urdf/libot.trans" />
+<xacro:include filename="$(find libot_description)/urdf/libot.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.00042337347607461663 9.251169610507761e-18 0.032161677080460666" rpy="0 0 0"/>
+    <mass value="0.5210499993342951"/>
+    <inertia ixx="0.000492" iyy="0.001007" izz="0.001363" ixy="0.0" iyz="0.0" ixz="-4e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://libot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://libot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_wheel_back_1">
+  <inertial>
+    <origin xyz="-2.0816681711721685e-17 -0.015 1.0408340855860843e-17" rpy="0 0 0"/>
+    <mass value="0.07707442273952339"/>
+    <inertia ixx="2.3e-05" iyy="3.4e-05" izz="2.3e-05" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.045 0.065 -0.03" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://libot_description/meshes/right_wheel_back_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.045 0.065 -0.03" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://libot_description/meshes/right_wheel_back_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_wheel_front__1">
+  <inertial>
+    <origin xyz="2.0816681711721685e-17 -0.015000000000000013 1.0408340855860843e-17" rpy="0 0 0"/>
+    <mass value="0.0770744227395234"/>
+    <inertia ixx="2.3e-05" iyy="3.4e-05" izz="2.3e-05" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.045 0.065 -0.03" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://libot_description/meshes/right_wheel_front__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.045 0.065 -0.03" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://libot_description/meshes/right_wheel_front__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_wheel_front_1">
+  <inertial>
+    <origin xyz="2.0816681711721685e-17 0.015 6.938893903907228e-18" rpy="0 0 0"/>
+    <mass value="0.07707442273952339"/>
+    <inertia ixx="2.3e-05" iyy="3.4e-05" izz="2.3e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.045 -0.065 -0.03" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://libot_description/meshes/left_wheel_front_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.045 -0.065 -0.03" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://libot_description/meshes/left_wheel_front_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_wheel_back_1">
+  <inertial>
+    <origin xyz="-1.3877787807814457e-17 0.015 1.0408340855860843e-17" rpy="0 0 0"/>
+    <mass value="0.0770744227395234"/>
+    <inertia ixx="2.3e-05" iyy="3.4e-05" izz="2.3e-05" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.045 -0.065 -0.03" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://libot_description/meshes/left_wheel_back_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.045 -0.065 -0.03" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://libot_description/meshes/left_wheel_back_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin xyz="0.0 -6.7807531641958715e-18 0.007500000000000007" rpy="0 0 0"/>
+    <mass value="0.04443018535950645"/>
+    <inertia ixx="1.1e-05" iyy="1.1e-05" izz="2e-05" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.025 0.0 -0.075" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://libot_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.025 0.0 -0.075" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://libot_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="camera_1">
+  <inertial>
+    <origin xyz="0.0014999999999999875 -1.5013511568273684e-17 0.0" rpy="0 0 0"/>
+    <mass value="0.0005095034965591924"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.06 0.0 -0.0565" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://libot_description/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.06 0.0 -0.0565" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://libot_description/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="right_wheel_back_joint" type="continuous">
+  <origin xyz="-0.045 -0.065 0.03" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_wheel_back_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="right_wheel_front_joint" type="continuous">
+  <origin xyz="0.045 -0.065 0.03" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_wheel_front__1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="left_wheel_front_joint" type="continuous">
+  <origin xyz="0.045 0.065 0.03" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_wheel_front_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="left_wheel_back_joint" type="continuous">
+  <origin xyz="-0.045 0.065 0.03" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_wheel_back_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="lidar_joint" type="fixed">
+  <origin xyz="-0.025 0.0 0.075" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+</joint>
+
+<joint name="camera_joint" type="fixed">
+  <origin xyz="0.06 0.0 0.0565" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="camera_1"/>
+</joint>
+
+</robot>

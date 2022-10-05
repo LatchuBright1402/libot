@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+
+<launch>
+  <node pkg = "opencv_tutorials" type = "cam_pub_node.py" name = "cam_pub" output = "screen" />
+  <node pkg = "opencv_tutorials" type = "cam_sub_node.py" name = "cam_sub" output = "screen" />
+</launch>
